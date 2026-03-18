@@ -137,7 +137,7 @@ header {
 }
 
 .hero-content {
-	position: relative; /* ensures text sits above overlay */
+	position: relative; /* so text sits above overlay */
 }
 
 /* BUTTON STYLES */
@@ -147,6 +147,7 @@ header {
 	margin-top: 1rem;
 	background: #fff;
 	color: #000;
+    font-weight: bold;
 	transition: 0.3s; /* smooth hover effect */
 }
 
