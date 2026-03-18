@@ -7,50 +7,59 @@
 
 <title>Midterm Project</title>
 
+<!-- Link to main stylesheet for overall styling -->
 <link rel="stylesheet" href="css/main.css">
 
+<!-- Google Fonts: Lato for headings, Karla for body text for readability and contrast -->
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Karla:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- Skip link improves accessibility by allowing keyboard users to jump straight to main content -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
+<!-- Wrapper helps control the width and spacing of the header content -->
 <div class="wrapper nav-wrapper">
 
-<img src="images/my-coffee-shop-logo.svg" alt="My Coffee House logo">
+    <!-- Logo image for branding, alt text for accessibility -->
+    <img src="images/my-coffee-shop-logo.svg" alt="My Coffee House logo">
 
-<nav aria-label="Main Navigation">
-<ul class="nav-list">
-<li><a href="#">About Us</a></li>
-<li><a href="#">Menu</a></li>
-<li><a href="#">Locations</a></li>
-</ul>
-</nav>
+    <!-- Main site navigation, aria-label improves screen reader context -->
+    <nav aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Locations</a></li>
+        </ul>
+    </nav>
 
 </div>
 </header>
 
 <main id="main-content">
 
+<!-- Hero section sets the first visual impression, background image + overlay for readability -->
 <section class="hero">
 <div class="hero-content wrapper">
-<h1>EXPERIENCE COFFEE<br>LIKE NEVER BEFORE</h1>
-<p>We craft more than beverages; we curate memories, one flavorful moment at a time. Embrace the aroma and let every vist be a chapter in your coffee story.</p>
-<a href="#" class="btn">Explore Our Menu</a>
+    <h1>EXPERIENCE COFFEE<br>LIKE NEVER BEFORE</h1>
+    <!-- Paragraph sets the tone of brand storytelling -->
+    <p>We craft more than beverages; we curate memories, one flavorful moment at a time. Embrace the aroma and let every vist be a chapter in your coffee story.</p>
+    <a href="#" class="btn">Explore Our Menu</a>
 </div>
 </section>
 
+<!-- Gallery section showcases product photography in a responsive grid layout -->
 <section class="gallery wrapper">
 <p class="section-label">WELCOME TO MY COFFEE HOUSE</p>
 <h2>EXPERIENCE A NEW WAY<br>TO TASTE COFFEE</h2>
 
 <div class="gallery-grid">
-    <!-- Left large image -->
+    <!-- Large feature image on the left -->
     <img src="images/latte.jpeg" alt="Latte art">
 
-    <!-- Right 4 images in 2x2 -->
+    <!-- Right column shows smaller supporting images in a 2x2 grid -->
     <div class="right-grid">
         <img src="images/coffee-beans.jpeg" alt="Coffee beans">
         <img src="images/pouring-coffee.jpeg" alt="Pour over coffee">
@@ -60,6 +69,7 @@
 </div>
 </section>
 
+<!-- Features section highlights what makes this coffee shop special -->
 <section class="features">
 <div class="wrapper">
 
@@ -68,6 +78,7 @@
 
 <div class="features-grid">
 
+<!-- Individual feature cards with icon, title, and description -->
 <div class="feature">
 <img src="images/fair-trade.svg" alt="">
 <h3>FAIR TRADE COFFEE</h3>
@@ -90,6 +101,7 @@
 </div>
 </section>
 
+<!-- CTA section encourages users to explore the menu or find a location -->
 <section class="cta-section">
 <div class="wrapper cta-wrapper">
 
@@ -108,6 +120,7 @@
 </div>
 </section>
 
+<!-- About section shares the brand story with image/text pairing -->
 <section class="about wrapper">
 <div class="about-grid">
 
@@ -124,6 +137,7 @@ My Coffee House quickly became a cherished gathering spot, where the rich aroma 
 </div>
 </section>
 
+<!-- Testimonials section adds social proof to build trust -->
 <section class="testimonials">
 <div class="wrapper">
 
@@ -132,6 +146,7 @@ My Coffee House quickly became a cherished gathering spot, where the rich aroma 
 
 <div class="testimonial-grid">
 
+<!-- Each testimonial includes image overlay, quote, and customer name -->
 <div class="testimonial">
 <img src="images/testimonial-1.jpeg" alt="">
 <p>"I always make a point to visit My Coffee Company when in Ottawa. Delicious coffee and friendly service."</p>
@@ -158,6 +173,7 @@ My Coffee House quickly became a cherished gathering spot, where the rich aroma 
 </main>
 
 <footer>
+<!-- Simple footer with copyright, kept minimal and center-aligned -->
 <p style="text-align:center; padding:1rem;">© My Coffee Company 2024</p>
 </footer>
 
