@@ -1,5 +1,26 @@
-/* RESET STYLES: Normalize browser defaults for consistent rendering across browsers */
-/* Source: Eric Meyer's CSS Reset v2.0 (public domain) */
+/* Smooth scrolling makes anchor links feel more natural instead of jumping instantly */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ADDED skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,118 +38,132 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font: inherit; /* Forces all elements to inherit the same font settings */
 	vertical-align: baseline;
 }
 
-/* Make HTML5 elements behave as block for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-/* Base body styles for spacing and font */
 body {
 	line-height: 1;
 }
 
-/* Remove list bullets */
 ol, ul {
 	list-style: none;
 }
 
-/* Remove default quotation marks */
 blockquote, q {
 	quotes: none;
 }
 
-/* Collapse table spacing by default */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-/* Base styles for font and background */
+/* Base styles */
 body {
-	background: #f3f0e9; /* warm, light background for a cozy feel */
-	font-family: 'Karla', sans-serif; /* readable font for paragraphs */
-	line-height: 1.6; /* comfortable spacing between lines */
+	background: #f3f0e9;
+	font-family: 'Karla', sans-serif;
+	line-height: 1.6; /* Improves readability by adding spacing between lines */
 }
 
+/* So images scale properly and don’t overflow their containers */
 img {
-	max-width: 100%; /* ensures images scale down on small screens */
-	display: block; /* removes extra bottom spacing */
+	max-width: 100%;
+	display: block;
 }
 
-/* Center feature icons inside feature cards */
+/* Centers feature icons so they look balanced inside their cards */
 .feature img {
 	width: 50%;
 	margin: 0 auto 1rem;
 }
 
+/* Removes default underline so links can be styled */
 a {
-	text-decoration: none; /* remove default link underline */
+	text-decoration: none;
 }
 
-/* Wrapper: controls max width and horizontal centering */
+/* Helps keyboard users see which link is focused */
+a:focus {
+    outline: 3px solid #d69e3d;
+    outline-offset: 2px;
+}
+
+/* Wrapper keeps content centered and stops it from getting too wide */
 .wrapper {
 	max-width: 1200px;
 	margin: auto;
-	padding: 1rem; /* spacing from edges on mobile */
+	padding: 1rem;
 }
 
-/* Typography for headings and section labels */
+/* Headings hierarchy */
 h1, h2, h3 {
-	font-family: 'Lato', sans-serif; /* bold font for headings */
-	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
 }
 
+/* Headings size hierarchy */
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.4rem; }
 
-/* Section labels use brand color and small size to visually separate sections */
+/* Small label text used above section headings for emphasis */
 .section-label {
 	color: #d69e3d;
-	font-size: 1rem;
+	font-size: 1.15rem;
+	font-weight: 500;
 	margin-bottom: 0.5rem;
 }
 
-/* HEADER AND NAVIGATION */
+/* Header styling */
 header {
-	background: #000; /* dark header to contrast white text */
+	background: #000;
 	color: #fff;
 }
 
+/* Flexbox stacks logo and nav vertically on smaller screens */
 .nav-wrapper {
 	display: flex;
-	flex-direction: column; /* stacked on mobile */
+	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
 }
 
+/* Navigation uses flex so items can wrap if needed */
 .nav-list {
-	list-style: none; /* remove bullets */
 	display: flex;
-	gap: 1.5rem; /* spacing between menu links */
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
+/* Nav links */
 .nav-list a {
-	color: #fff; /* readable white text on black background */
+	color: #fff;
 	font-weight: bold;
-	text-decoration: none;
 }
 
-/* HERO SECTION */
+/* Hero section */
 .hero {
 	background: url("../images/hero-background.jpg") center/cover no-repeat;
 	color: #fff;
 	text-align: center;
-	padding: 5rem 1rem; /* give breathing room around hero content */
-	position: relative; /* for overlay */
+	padding: 5rem 1rem;
+	position: relative;
 }
 
-/* Dark overlay to make text readable over hero image */
+/* Overlay over the image */
 .hero::before {
 	content: "";
 	position: absolute;
@@ -136,261 +171,262 @@ header {
 	background: rgba(0,0,0,0.5);
 }
 
+/* Keeps content above the overlay */
 .hero-content {
-	position: relative; /* so text sits above overlay */
+	position: relative;
 }
 
-/* BUTTON STYLES */
+/* Button styling */
 .btn {
 	display: inline-block;
-	padding: .8rem 1.5rem;
+	padding: .5rem 2.5rem;
 	margin-top: 1rem;
 	background: #fff;
 	color: #000;
     font-weight: bold;
-	transition: 0.3s; /* smooth hover effect */
+	transition: 0.3s;
 }
 
+/* Hover effect adds feedback when users interact */
 .btn:hover {
-	transform: scale(1.05); /* slight zoom on hover */
+	transform: scale(1.05);
 	background: #d69e3d;
 	color: #fff;
 }
 
+/* Dark version of the button */
 .btn.dark {
 	background: #000;
 	color: #fff;
 }
 
-/* GALLERY SECTION */
+/* Gallery layout starts stacked for mobile */
 .gallery-grid {
 	display: grid;
-	grid-template-columns: 1fr; /* stack images on mobile */
+	grid-template-columns: 1fr;
 	gap: 1rem;
 }
 
-.gallery-grid img:first-child {
-	width: 100%;
-	object-fit: cover; /* ensures image covers its container */
-}
-
+/* Right-side grid for smaller images */
 .right-grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr; /* two images per row */
+	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
 }
 
-/* FEATURES SECTION */
+/* Features section spacing and alignment */
 .features {
 	text-align: center;
-	padding: 3rem 0; /* spacing above and below section */
+	padding: 3rem 0;
 }
 
+/* FEATURES GRID RESPONSIVE */
+
+/* Base grid for mobile: single column */
 .features-grid {
 	display: grid;
-	grid-template-columns: 1fr; /* stack features on mobile */
-	gap: 2rem; /* space between cards */
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	justify-items: center;
 }
 
-/* CTA SECTION */
+.features-grid > .feature {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: auto;
+	max-width: none;
+}
+
+/* Tablet: 2 columns, 3rd item centered below */
+@media (min-width: 768px) and (max-width: 1099px) {
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+		justify-items: center;
+		align-items: stretch;  /* ensures equal heights in first row */
+	}
+
+	.features-grid > .feature {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		height: 100%;  /* make first row items equal height */
+		max-width: 300px; /* optional to keep consistency */
+	}
+
+	.features-grid > .feature:nth-child(3) {
+		grid-column: 1 / -1;   /* span both columns */
+		justify-self: center;   /* center horizontally */
+		height: auto;           /* grow naturally with content */
+	}
+}
+
+/* Desktop: 3 columns, all in one row */
+@media (min-width: 1100px) {
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		justify-items: center;
+		align-items: stretch;  /* equal heights */
+	}
+
+	.features-grid > .feature:nth-child(3) {
+		grid-column: auto !important;  /* reset tablet override */
+		justify-self: center;
+		height: auto;
+		max-width: none; 
+	}
+}
+
+/* Call To Aaction section */
 .cta-section {
 	background: url("../images/coffee-shop.jpeg") center/cover no-repeat;
 	position: relative;
 	padding: 4rem 1rem;
 }
 
+/* Overlay */
 .cta-section::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: rgba(0,0,0,0.6); /* dark overlay for readability */
+	background: rgba(0,0,0,0.6);
 }
 
+/* Grid layout for CTA boxes */
 .cta-wrapper {
 	position: relative;
 	display: grid;
-	gap: 2rem;
+	gap: 4rem;
 	text-align: center;
 }
 
+/* CTA text colour */
 .cta-box {
 	color: #fff;
 }
 
+/* Menu button using a solid style */
 .menu-btn {
 	background: #fff;
 	color: #000;
 	font-weight: bold;
 }
 
+/* Location button using an outline style */
 .location-btn {
 	background: transparent;
 	color: #fff;
 	border: 2px solid #fff;
 }
 
+/* Hover flips colors */
 .location-btn:hover {
 	background: #fff;
 	color: #000;
 }
 
-/* ABOUT SECTION */
+/* About section grid to place image beside text */
 .about-grid {
 	display: grid;
 	gap: 2rem;
 }
 
-.about-grid div {
-	text-align: left; /* keeps text aligned nicely next to image */
-}
-
-/* TESTIMONIALS SECTION */
+/* Testimonials section with a dark background to help images and text pop */
 .testimonials {
 	background: #000;
 	color: #fff;
 	padding: 3rem 0;
 }
 
+/* Testimonial names and cities in brand yellow */
+.testimonial span {
+    bottom: 1rem;
+    color: #d69e3d;
+    font-weight: 500;
+}
+
+/* Grid layout for testimonials */
 .testimonial-grid {
 	display: grid;
 	gap: 2rem;
 }
 
+/* Each testimonial acts like a card */
 .testimonial {
 	position: relative;
 	overflow: hidden;
 	border-radius: 8px;
 }
 
-.testimonial img {
-	width: 100%;
-	display: block;
-	object-fit: cover;
-}
-
+/* Overlay for text to be readable on top of images */
 .testimonial::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: rgba(0,0,0,0.4); /* overlay improves text contrast */
+	background: rgba(0,0,0,0.4);
 }
 
+/* Text on top of images */
 .testimonial p,
 .testimonial span {
 	position: absolute;
 	left: 1rem;
 	z-index: 2;
-	margin: 0;
-	line-height: 1.4;
 }
 
 .testimonial p {
-	bottom: 3rem;
-	color: #fff;
-	font-size: 1rem;
-	max-width: 80%;
+    bottom: 2.5rem;
 }
 
 .testimonial span {
-	bottom: 1rem;
-	color: #d69e3d;
-	font-weight: bold;
-	font-size: 0.9rem;
+    bottom: 1rem;
 }
 
-/* TABLET STYLES */
+/* Tablet layout improvements */
 @media (min-width: 768px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-    }
+	.cta-wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
 
-    .feature:nth-child(3) {
-        grid-column: 1 / -1; /* center last feature on 2-column grid */
-        max-width: 400px;
-    }
+	.testimonial-grid {
+		grid-template-columns: repeat(3,1fr);
+	}
 
-    .cta-wrapper {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr 1fr;
-        align-items: center; /* vertically center text with image */
-    }
-
-    .testimonial-grid {
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .right-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    .right-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        aspect-ratio: 1 / 1;
-    }
+	.gallery-grid {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
-/* DESKTOP STYLES */
+/* Desktop layout adjustments */
 @media (min-width: 1100px) {
-    h1 { font-size: 3.8rem; }
-    h2 { font-size: 3rem; }
-    h3 { font-size: 2rem; }
+	h1 { font-size: 3.8rem; }
+	h2 { font-size: 3rem; }
+	h3 { font-size: 2rem; }
 
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-
-    .feature:nth-child(3) {
-        grid-column: auto;
-        max-width: none;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .nav-wrapper {
-        flex-direction: row; /* horizontal nav on desktop */
-        justify-content: space-between; /* logo left, menu right */
-        align-items: center;
-    }
-
-    .nav-list {
-        justify-content: flex-end;
-    }
-
-    .about-grid {
-        align-items: center;
-    }
+	.nav-wrapper {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }
 
-/* MOBILE STYLING */
+/* Mobile-specific tweaks */
 @media (max-width: 767px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        text-align: left; /* stacked layout for small screens */
-    }
+	.about-grid {
+		grid-template-columns: 1fr;
+	}
 
-    .nav-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    /* Limit feature card size on mobile so they don’t get too big */
+    .features-grid > .feature {
+        max-width: 350px;
+        width: 100%;
     }
 }
 
-/* FOOTER */
+/* Footer */
 footer {
 	background: #000;
 	color: #fff;
